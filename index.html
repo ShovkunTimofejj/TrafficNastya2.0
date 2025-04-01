@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Розпродаж товару</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #111;
+      margin: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+    .black-friday-banner {
+      background-color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 20px;
+      position: relative;
+      animation: fadeIn 1s ease-in-out, pulseBackground 1.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulseBackground {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.05);
+      }
+    }
+
+    .black-friday-banner h1 {
+      font-size: 28px;
+      margin: 0;
+      color: white;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+
+    .black-friday-banner h1::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: #E67E22;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    .content {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(230, 126, 34, 0.6);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      opacity: 0;
+      animation: slideIn 1s ease-in-out forwards 0.5s, orangeGlow 1.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes orangeGlow {
+      0% {
+        box-shadow: 0 0 10px rgba(230, 126, 34, 0.4);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(230, 126, 34, 0.8);
+      }
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #E67E22;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, box-shadow 0.3s;
+      animation: pulseButton 2s infinite alternate ease-in-out;
+    }
+    .button:hover {
+      background-color: #D35400;
+    }
+    .button:active {
+      box-shadow: 0 0 15px #E67E22, 0 0 25px #D35400;
+    }
+
+    @keyframes pulseButton {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.05);
+      }
+    }
+
+    .finger {
+      font-size: 50px;
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      color: #F1C40F;
+      animation: moveFinger 0.6s infinite alternate ease-in-out;
+    }
+
+    @keyframes moveFinger {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 10px;
+      animation: photoGlow 1.5s infinite alternate;
+    }
+
+    @keyframes photoGlow {
+      0% {
+        box-shadow: 0 0 10px rgba(230, 126, 34, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(230, 126, 34, 0.8);
+      }
+    }
+
+    .instruction-text {
+      font-size: 22px;
+      line-height: 1.6;
+    }
+
+    /* Стили для стрелки вверх */
+    .arrow-up {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: #E67E22;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      font-size: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .arrow-up:hover {
+      background-color: #D35400;
+      box-shadow: 0 0 15px #E67E22, 0 0 25px #D35400;
+    }
+  </style>
+</head>
+<body>
+<div class="black-friday-banner">
+  <img src="icon.png" alt="Аватар" class="avatar">
+  <h1>Розпродаж товару</h1>
+  <div class="red-bar"></div>
+</div>
+<div class="content">
+  <h2>Інструкція</h2>
+  <p class="instruction-text">Щоб зробити замовлення, натисніть на три крапки (…) у верхньому правому куті👆.
+    Виберіть «Відкрити у браузері» 📝, потім натисніть «ЗАМОВИТИ» та «ПРИЄДНАТИСЯ».
+    Наш менеджер зв’яжеться з вами протягом хвилини😉</p>
+  <a href="https://t.me/+n8OakXVj9PY5M2Y6" class="button">Замовити</a>
+</div>
+<div class="finger">👆</div>
+
+<div class="arrow-up" onclick="scrollToTop()">▲</div>
+
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.addEventListener('scroll', () => {
+    const arrow = document.querySelector('.arrow-up');
+    if (window.scrollY > 100) {
+      arrow.style.display = 'block';
+    } else {
+      arrow.style.display = 'none';
+    }
+  });
+
+  window.dispatchEvent(new Event('scroll'));
+</script>
+
+</body>
+</html>
